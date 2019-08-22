@@ -1,0 +1,18 @@
+defaultEntryPoints = ["http", "https"]
+
+[entryPoints]
+  [entryPoints.dashboard]
+    address = ":8080"
+
+[api]
+entrypoint="dashboard"
+
+[entryPoints.http]
+address = ":80"
+    [entryPoints.http.redirect]
+
+
+[docker]
+domain = "server.test"
+watch = true
+network = "net-traefik"
